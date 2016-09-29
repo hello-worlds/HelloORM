@@ -17,14 +17,14 @@ import javax.persistence.Table;
 // remove database table when you want to try other strategy
 
 //Inheritence Strategy configuration SINGLE_TABLE
-@Inheritance (strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "type")
+//@Inheritance (strategy = InheritanceType.SINGLE_TABLE)
+//@DiscriminatorColumn(name = "type")
 
 //Inheritence Strategy configuration JOINED
 //@Inheritance( strategy = InheritanceType.JOINED )
 
 //Inheritence Strategy configuration TABLE_PER_CLASS
-//@Inheritance( strategy = InheritanceType.TABLE_PER_CLASS)
+@Inheritance( strategy = InheritanceType.TABLE_PER_CLASS)
 
 public class Staff implements Serializable {
 	@Id
