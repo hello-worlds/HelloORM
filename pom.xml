@@ -16,6 +16,7 @@
 
 	<dependencies>
 		<!-- jpa is specification, not implementation -->
+		<!-- javax.persistence-1.0.2 do not have EntityManager.getCriteriaBuilder() -->
 		<!-- <dependency>
 			<groupId>javax.persistence</groupId>
 			<artifactId>persistence-api</artifactId>
@@ -26,12 +27,14 @@
 		<!-- jpa implementation using eclipselink -->
 		<!-- you can use other implementation that implement jpa -->
 		<!-- like hibernate, etc -->
+		<!-- include javax.persistence-2.1.0 in eclipselink -->
+		<!-- javax.persistence.persistence-api not used -->
+		<!-- javax.persistence-2.5.0 do have EntityManager.getCriteriaBuilder() -->
 		<dependency>
 			<groupId>org.eclipse.persistence</groupId>
 			<artifactId>eclipselink</artifactId>
 			<version>2.5.0</version>
 		</dependency>
-		
 		
 		<dependency>
 			<groupId>mysql</groupId>
