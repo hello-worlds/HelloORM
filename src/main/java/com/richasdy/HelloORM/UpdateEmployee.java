@@ -10,7 +10,7 @@ public class UpdateEmployee {
 
 		EntityManager entitymanager = emfactory.createEntityManager();
 		entitymanager.getTransaction().begin();
-		Employee employee = entitymanager.find(Employee.class, 1201);
+		Employee employee = entitymanager.find(Employee.class, 1);
 
 		// before update
 		System.out.println(employee);

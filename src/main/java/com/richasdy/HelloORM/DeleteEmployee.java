@@ -11,7 +11,7 @@ public class DeleteEmployee {
 		EntityManager entitymanager = emfactory.createEntityManager();
 		entitymanager.getTransaction().begin();
 
-		Employee employee = entitymanager.find(Employee.class, 1201);
+		Employee employee = entitymanager.find(Employee.class, 1);
 		entitymanager.remove(employee);
 		entitymanager.getTransaction().commit();
 		entitymanager.close();

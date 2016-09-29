@@ -9,9 +9,9 @@ import javax.persistence.Table;
 @Entity
 @Table
 public class Employee {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-
 	private int eid;
 	private String ename;
 	private double salary;
