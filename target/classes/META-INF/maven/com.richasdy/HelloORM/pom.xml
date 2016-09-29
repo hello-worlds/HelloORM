@@ -22,7 +22,8 @@
 			<version>1.0.2</version>
 		</dependency>
 		
-		<!-- jpa implementation using eclipse link -->
+		<!-- jpa provider -->
+		<!-- jpa implementation using eclipselink -->
 		<!-- you can use other implementation that implement jpa -->
 		<!-- like hibernate, etc -->
 		<dependency>
