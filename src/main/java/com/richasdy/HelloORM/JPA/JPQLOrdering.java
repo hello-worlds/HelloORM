@@ -1,4 +1,4 @@
-package com.richasdy.HelloORM;
+package com.richasdy.HelloORM.JPA;
 
 import java.util.List;
 
@@ -9,31 +9,19 @@ import javax.persistence.Query;
 
 import com.richasdy.HelloORM.model.Employee;
 
-public class JPQLBetweenAndLike {
+public class JPQLOrdering {
 	public static void main(String[] args) {
-
 		EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("EclipselinkJPA");
 		EntityManager entitymanager = emfactory.createEntityManager();
 
 		// Between
-		Query query = entitymanager
-				.createQuery("Select e " + "from Employee e " + "where e.salary " + "Between 30000 and 40000");
+		Query query = entitymanager.createQuery("Select e " + "from Employee e " + "ORDER BY e.ename ASC");
 
 		List<Employee> list = (List<Employee>) query.getResultList();
 
 		for (Employee e : list) {
 			System.out.print("Employee ID :" + e.getEid());
-			System.out.println("\t Employee salary :" + e.getSalary());
-		}
-
-		// Like
-		Query query1 = entitymanager.createQuery("Select e " + "from Employee e " + "where e.ename LIKE 'M%'");
-
-		List<Employee> list1 = (List<Employee>) query1.getResultList();
-
-		for (Employee e : list1) {
-			System.out.print("Employee ID :" + e.getEid());
-			System.out.println("\t Employee name :" + e.getEname());
+			System.out.println("\t Employee Name :" + e.getEname());
 		}
 	}
 }

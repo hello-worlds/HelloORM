@@ -1,6 +1,6 @@
 // package
 
-package com.richasdy.HelloORM;
+package com.richasdy.HelloORM.JPA;
 
 import java.util.List;
 

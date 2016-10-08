@@ -1,4 +1,4 @@
-package com.richasdy.HelloORM;
+package com.richasdy.HelloORM.JPA;
 
 import java.util.HashSet;
 import java.util.Set;

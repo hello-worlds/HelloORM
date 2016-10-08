@@ -1,4 +1,4 @@
-package com.richasdy.HelloORM;
+package com.richasdy.HelloORM.JPA;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
