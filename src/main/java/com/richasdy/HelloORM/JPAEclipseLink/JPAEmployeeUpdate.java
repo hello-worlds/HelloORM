@@ -1,4 +1,4 @@
-package com.richasdy.HelloORM.JPA;
+package com.richasdy.HelloORM.JPAEclipseLink;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -6,17 +6,22 @@ import javax.persistence.Persistence;
 
 import com.richasdy.HelloORM.model.Employee;
 
-public class JPAEmployeeFind {
+public class JPAEmployeeUpdate {
 	public static void main(String[] args) {
-
 		EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("EclipselinkJPA");
+
 		EntityManager entitymanager = emfactory.createEntityManager();
+		entitymanager.getTransaction().begin();
 		Employee employee = entitymanager.find(Employee.class, 1);
 
-		System.out.println("employee ID = " + employee.getEid());
-		System.out.println("employee NAME = " + employee.getEname());
-		System.out.println("employee SALARY = " + employee.getSalary());
-		System.out.println("employee DESIGNATION = " + employee.getDeg());
-	}
+		// before update
+		System.out.println(employee);
+		employee.setSalary(46000);
+		entitymanager.getTransaction().commit();
 
+		// after update
+		System.out.println(employee);
+		entitymanager.close();
+		emfactory.close();
+	}
 }

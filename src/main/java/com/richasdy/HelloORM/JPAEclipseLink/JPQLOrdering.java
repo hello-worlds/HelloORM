@@ -1,4 +1,4 @@
-package com.richasdy.HelloORM.JPA;
+package com.richasdy.HelloORM.JPAEclipseLink;
 
 import java.util.List;
 
