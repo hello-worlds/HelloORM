@@ -11,7 +11,7 @@ import com.richasdy.HelloORM.Hibernate.model.Stock;
 public class HibernateManyToMany {
 	public static void main(String[] args) {
 
-		System.out.println("Hibernate many to many (XML Mapping)");
+		System.out.println("Hibernate many to many (Annotation Mapping)");
 		Session session = HibernateUtil.getSessionFactory().openSession();
 
 		session.beginTransaction();

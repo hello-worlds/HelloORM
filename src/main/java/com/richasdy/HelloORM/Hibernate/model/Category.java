@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -20,6 +21,8 @@ public class Category implements Serializable {
 	private String desc;
 	// ManyToMany Implementation
 	private Set<Stock> stocks = new HashSet<Stock>(0);
+	// ManyToMany w/ additional field Implementation
+	// private Set<StockCategory> stockCategories = new HashSet<StockCategory>(0);
 
 	public Category() {
 	}
@@ -34,6 +37,15 @@ public class Category implements Serializable {
 		this.desc = desc;
 		this.stocks = stocks;
 	}
+
+	// ManyToMany w/ additional field Implementation
+	// Method above must in comment
+	// public Category(String name, String desc, Set<StockCategory>
+	// stockCategories) {
+	// this.name = name;
+	// this.desc = desc;
+	// this.stockCategories = stockCategories;
+	// }
 
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
@@ -72,11 +84,19 @@ public class Category implements Serializable {
 	public void setStocks(Set<Stock> stocks) {
 		this.stocks = stocks;
 	}
-	
+
+	// @OneToMany(fetch = FetchType.LAZY, mappedBy = "pk.category")
+	// public Set<StockCategory> getStockCategories() {
+	// return this.stockCategories;
+	// }
+	//
+	// public void setStockCategories(Set<StockCategory> stockCategories) {
+	// this.stockCategories = stockCategories;
+	// }
+
 	@Override
-	public String toString(){
-		return "Category [categoryId=" + this.categoryId + ", name=" + this.name + ", desc=" + this.desc
-				+ "]";
+	public String toString() {
+		return "Category [categoryId=" + this.categoryId + ", name=" + this.name + ", desc=" + this.desc + "]";
 	}
 
 }

@@ -33,6 +33,8 @@ public class Stock implements java.io.Serializable {
 			0);
 	// ManyToMany Implementation
 	private Set<Category> categories = new HashSet<Category>(0);
+	// ManyToMany w/ additional field Implementation
+	// private Set<StockCategory> stockCategories = new HashSet<StockCategory>(0);
 
 	public Stock() {
 	}
@@ -99,6 +101,7 @@ public class Stock implements java.io.Serializable {
 	@JoinTable(name = "stock_category", catalog = "hellojava", joinColumns = {
 			@JoinColumn(name = "STOCK_ID", nullable = false, updatable = false) }, inverseJoinColumns = {
 					@JoinColumn(name = "CATEGORY_ID", nullable = false, updatable = false) })
+	
 	public Set<Category> getCategories() {
 		return this.categories;
 	}
@@ -106,6 +109,16 @@ public class Stock implements java.io.Serializable {
 	public void setCategories(Set<Category> categories) {
 		this.categories = categories;
 	}
+	
+	// @OneToMany(fetch = FetchType.LAZY, mappedBy = "pk.stock", cascade=CascadeType.ALL)
+	// public Set<StockCategory> getStockCategories() {
+	// return this.stockCategories;
+	// }
+	//
+	// public void setStockCategories(Set<StockCategory> stockCategories) {
+	// this.stockCategories = stockCategories;
+	// }
+
 
 	@Override
 	public String toString() {

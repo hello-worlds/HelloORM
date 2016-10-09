@@ -16,6 +16,8 @@
 		<mapping class="com.richasdy.HelloORM.Hibernate.model.StockDetail" />
 		<mapping class="com.richasdy.HelloORM.Hibernate.model.StockDailyRecord" />
 		<mapping class="com.richasdy.HelloORM.Hibernate.model.Category" />
+		<mapping class="com.richasdy.HelloORM.Hibernate.model.StockCategory" />
+		<mapping class="com.richasdy.HelloORM.Hibernate.model.StockCategoryId" />
 		<!-- <mapping class="com/richasdy/HelloORM/Hibernate/model/Stock.hbm.xml"></mapping> -->
 		<!-- <mapping resource="com/richasdy/HelloORM/Hibernate/model/HEmployee.hbm.xml"></mapping> -->
 	</session-factory>
