@@ -108,4 +108,13 @@ public class StockDailyRecord implements java.io.Serializable {
 	public void setDate(Date date) {
 		this.date = date;
 	}
+	
+	@Override
+	public String toString(){
+		return "StockDailyRecord [recordId=" + this.recordId 
+				+ ", priceOpen=" + this.priceOpen + ", priceClose=" + this.priceClose
+				+ ", priceChange=" + this.priceChange + ", volume=" + this.volume
+				+ ", date=" + this.date + "]";
+		
+	}
 }

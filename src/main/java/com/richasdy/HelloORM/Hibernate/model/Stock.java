@@ -27,6 +27,9 @@ public class Stock implements java.io.Serializable {
 	private String stockName;
 	// OneToOne Implementation
 	private StockDetail stockDetail;
+	// OneToMany Implementation
+	private Set<StockDailyRecord> stockDailyRecords = new HashSet<StockDailyRecord>(
+			0);
 
 	public Stock() {
 	}
@@ -78,6 +81,15 @@ public class Stock implements java.io.Serializable {
 
 	public void setStockDetail(StockDetail stockDetail) {
 		this.stockDetail = stockDetail;
+	}
+	
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "stock")
+	public Set<StockDailyRecord> getStockDailyRecords() {
+		return this.stockDailyRecords;
+	}
+
+	public void setStockDailyRecords(Set<StockDailyRecord> stockDailyRecords) {
+		this.stockDailyRecords = stockDailyRecords;
 	}
 
 	@Override

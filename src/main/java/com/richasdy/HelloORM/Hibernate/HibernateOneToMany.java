@@ -20,17 +20,31 @@ public class HibernateOneToMany {
 		stock.setStockName("PADINI");
 		session.save(stock);
 
+		// first daily record
 		StockDailyRecord stockDailyRecords = new StockDailyRecord();
 		stockDailyRecords.setPriceOpen(new Float("1.2"));
 		stockDailyRecords.setPriceClose(new Float("1.1"));
 		stockDailyRecords.setPriceChange(new Float("10.0"));
 		stockDailyRecords.setVolume(3000000L);
 		stockDailyRecords.setDate(new Date());
-
+		
 		stockDailyRecords.setStock(stock);
 		stock.getStockDailyRecords().add(stockDailyRecords);
-
 		session.save(stockDailyRecords);
+
+		// second daily record
+		StockDailyRecord stockDailyRecords2 = new StockDailyRecord();
+		stockDailyRecords2.setPriceOpen(new Float("3.3"));
+		stockDailyRecords2.setPriceClose(new Float("3.3"));
+		stockDailyRecords2.setPriceChange(new Float("3.3"));
+		stockDailyRecords2.setVolume(3000000L);
+		Date today = new Date();
+		Date tomorrow = new Date(today.getTime() + (1000 * 60 * 60 * 24));
+		stockDailyRecords2.setDate(tomorrow);
+
+		stockDailyRecords2.setStock(stock);
+		stock.getStockDailyRecords().add(stockDailyRecords2);
+		session.save(stockDailyRecords2);
 
 		session.getTransaction().commit();
 		System.out.println("Done");
