@@ -1,4 +1,4 @@
-package com.richasdy.HelloORM.model;
+package com.richasdy.HelloORM.JPAEclipseLink.model;
 
 import java.util.Set;
 

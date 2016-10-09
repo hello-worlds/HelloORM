@@ -6,7 +6,7 @@
    http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
 
 	<persistence-unit name="EclipselinkJPA" transaction-type="RESOURCE_LOCAL">
-		<class>com.richasdy.HelloORM.model.Employee</class>
+		<class>com.richasdy.HelloORM.JPAEclipseLink.model.Employee</class>
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/hellojava" />
 			<property name="javax.persistence.jdbc.user" value="root" />
@@ -19,11 +19,11 @@
 	</persistence-unit>
 	
 	<persistence-unit name="EclipselinkJPASrategy" transaction-type="RESOURCE_LOCAL">
-		<class>com.richasdy.HelloORM.model.Staff</class>
-		<class>com.richasdy.HelloORM.model.TeachingStaff</class>
-		<class>com.richasdy.HelloORM.model.NonTeachingStaff</class>
-		<class>com.richasdy.HelloORM.model.ERDepartment</class>
-		<class>com.richasdy.HelloORM.model.EREmployee</class>
+		<class>com.richasdy.HelloORM.JPAEclipseLink.model.Staff</class>
+		<class>com.richasdy.HelloORM.JPAEclipseLink.model.TeachingStaff</class>
+		<class>com.richasdy.HelloORM.JPAEclipseLink.model.NonTeachingStaff</class>
+		<class>com.richasdy.HelloORM.JPAEclipseLink.model.ERDepartment</class>
+		<class>com.richasdy.HelloORM.JPAEclipseLink.model.EREmployee</class>
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/hellojava" />
 			<property name="javax.persistence.jdbc.user" value="root" />
@@ -35,10 +35,10 @@
 	</persistence-unit>
 	
 	<persistence-unit name="EclipselinkJPAER" transaction-type="RESOURCE_LOCAL">
-		<class>com.richasdy.HelloORM.model.ERDepartment</class>
-		<class>com.richasdy.HelloORM.model.EREmployee</class>
-		<class>com.richasdy.HelloORM.model.Class</class>
-		<class>com.richasdy.HelloORM.model.Teacher</class>
+		<class>com.richasdy.HelloORM.JPAEclipseLink.model.ERDepartment</class>
+		<class>com.richasdy.HelloORM.JPAEclipseLink.model.EREmployee</class>
+		<class>com.richasdy.HelloORM.JPAEclipseLink.model.Class</class>
+		<class>com.richasdy.HelloORM.JPAEclipseLink.model.Teacher</class>
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/hellojava" />
 			<property name="javax.persistence.jdbc.user" value="root" />

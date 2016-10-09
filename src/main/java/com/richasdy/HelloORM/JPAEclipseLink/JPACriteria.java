@@ -12,7 +12,7 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
-import com.richasdy.HelloORM.model.Employee;
+import com.richasdy.HelloORM.JPAEclipseLink.model.Employee;
 
 public class JPACriteria {
 	public static void main(String[] args) {

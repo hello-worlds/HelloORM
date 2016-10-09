@@ -14,7 +14,7 @@ import org.hibernate.Transaction;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-import com.richasdy.HelloORM.model.Stock;
+import com.richasdy.HelloORM.Hibernate.model.Stock;
 
 public class HibernateStockService {
 

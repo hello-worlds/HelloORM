@@ -2,7 +2,7 @@ package com.richasdy.HelloORM.Hibernate;
 
 import org.hibernate.Session;
 import com.richasdy.HelloORM.Hibernate.HibernateUtil;
-import com.richasdy.HelloORM.model.Stock;
+import com.richasdy.HelloORM.Hibernate.model.Stock;
 
 public class HibernateApp {
 

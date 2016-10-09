@@ -1,4 +1,4 @@
-package com.richasdy.HelloORM.model;
+package com.richasdy.HelloORM.Hibernate.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

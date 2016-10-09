@@ -7,8 +7,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import com.richasdy.HelloORM.model.ERDepartment;
-import com.richasdy.HelloORM.model.EREmployee;
+import com.richasdy.HelloORM.JPAEclipseLink.model.ERDepartment;
+import com.richasdy.HelloORM.JPAEclipseLink.model.EREmployee;
 
 public class JPAEROneToMany {
 	public static void main(String[] args) {

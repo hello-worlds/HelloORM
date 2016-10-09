@@ -4,8 +4,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import com.richasdy.HelloORM.model.NonTeachingStaff;
-import com.richasdy.HelloORM.model.TeachingStaff;
+import com.richasdy.HelloORM.JPAEclipseLink.model.NonTeachingStaff;
+import com.richasdy.HelloORM.JPAEclipseLink.model.TeachingStaff;
 
 public class JPAInheritanceStrategies {
 	public static void main(String[] args) {

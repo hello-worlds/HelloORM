@@ -1,4 +1,4 @@
-package com.richasdy.HelloORM.model;
+package com.richasdy.HelloORM.JPAEclipseLink.model;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;

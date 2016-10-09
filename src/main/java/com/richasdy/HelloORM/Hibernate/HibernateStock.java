@@ -14,7 +14,7 @@ import org.hibernate.Transaction;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-import com.richasdy.HelloORM.model.Stock;
+import com.richasdy.HelloORM.Hibernate.model.Stock;
 
 public class HibernateStock {
 	
@@ -26,21 +26,27 @@ public class HibernateStock {
 		
 		HibernateStock HSObject = new HibernateStock();
 
+		
 		/* Add few employee records in database */
+		System.out.println("Adding Stock");
 		Integer stockID1 = HSObject.addStock("Lea Jeans", "LJ");
 		Integer stockID2 = HSObject.addStock("Eiger Bag", "EB");
 		Integer stockID3 = HSObject.addStock("Nike Shoes", "NS");
 
 		/* List down all the employees */
+		System.out.println("List Stock");
 		HSObject.listStocks();
 
 		/* Update stock records */
+		System.out.println("Update Stock stockID1");
 		HSObject.updateStock(stockID1, "LJL");
 
 		/* Delete a stock from the database */
+		System.out.println("Delete Stock stockID3");
 		HSObject.deleteStock(stockID3);
 
 		/* List down new list of the stocks */
+		System.out.println("List Stock");
 		HSObject.listStocks();
 	}
 

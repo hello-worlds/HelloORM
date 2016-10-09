@@ -7,7 +7,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
-import com.richasdy.HelloORM.model.Employee;
+import com.richasdy.HelloORM.JPAEclipseLink.model.Employee;
 
 public class JPQLOrdering {
 	public static void main(String[] args) {
