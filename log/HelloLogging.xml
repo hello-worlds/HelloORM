@@ -1,0 +1,60 @@
+<log4j:event logger="org.hibernate.Version" timestamp="1476027683416" level="INFO" thread="main">
+<log4j:message><![CDATA[HHH000412: Hibernate Core {5.2.3.Final}]]></log4j:message>
+<log4j:locationInfo class="org.hibernate.Version" method="logVersion" file="Version.java" line="45"/>
+</log4j:event>
+
+<log4j:event logger="org.hibernate.cfg.Environment" timestamp="1476027684111" level="INFO" thread="main">
+<log4j:message><![CDATA[HHH000206: hibernate.properties not found]]></log4j:message>
+<log4j:locationInfo class="org.hibernate.cfg.Environment" method="&lt;clinit&gt;" file="Environment.java" line="213"/>
+</log4j:event>
+
+<log4j:event logger="org.hibernate.cfg.Environment" timestamp="1476027684116" level="INFO" thread="main">
+<log4j:message><![CDATA[HHH000021: Bytecode provider name : javassist]]></log4j:message>
+<log4j:locationInfo class="org.hibernate.cfg.Environment" method="buildBytecodeProvider" file="Environment.java" line="318"/>
+</log4j:event>
+
+<log4j:event logger="org.hibernate.orm.deprecation" timestamp="1476027684132" level="WARN" thread="main">
+<log4j:message><![CDATA[HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.]]></log4j:message>
+<log4j:locationInfo class="org.hibernate.boot.jaxb.internal.stax.LocalXmlResourceResolver" method="resolveEntity" file="LocalXmlResourceResolver.java" line="91"/>
+</log4j:event>
+
+<log4j:event logger="org.hibernate.annotations.common.Version" timestamp="1476027684346" level="INFO" thread="main">
+<log4j:message><![CDATA[HCANN000001: Hibernate Commons Annotations {5.0.1.Final}]]></log4j:message>
+<log4j:locationInfo class="org.hibernate.annotations.common.reflection.java.JavaReflectionManager" method="&lt;clinit&gt;" file="JavaReflectionManager.java" line="66"/>
+</log4j:event>
+
+<log4j:event logger="org.hibernate.orm.connections.pooling" timestamp="1476027684445" level="WARN" thread="main">
+<log4j:message><![CDATA[HHH10001002: Using Hibernate built-in connection pool (not for production use!)]]></log4j:message>
+<log4j:locationInfo class="org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl" method="configure" file="DriverManagerConnectionProviderImpl.java" line="70"/>
+</log4j:event>
+
+<log4j:event logger="org.hibernate.orm.connections.pooling" timestamp="1476027684450" level="INFO" thread="main">
+<log4j:message><![CDATA[HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/hellojava]]]></log4j:message>
+<log4j:locationInfo class="org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl" method="buildCreator" file="DriverManagerConnectionProviderImpl.java" line="126"/>
+</log4j:event>
+
+<log4j:event logger="org.hibernate.orm.connections.pooling" timestamp="1476027684452" level="INFO" thread="main">
+<log4j:message><![CDATA[HHH10001001: Connection properties: {user=root, password=****}]]></log4j:message>
+<log4j:locationInfo class="org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl" method="buildCreator" file="DriverManagerConnectionProviderImpl.java" line="135"/>
+</log4j:event>
+
+<log4j:event logger="org.hibernate.orm.connections.pooling" timestamp="1476027684453" level="INFO" thread="main">
+<log4j:message><![CDATA[HHH10001003: Autocommit mode: false]]></log4j:message>
+<log4j:locationInfo class="org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl" method="buildCreator" file="DriverManagerConnectionProviderImpl.java" line="140"/>
+</log4j:event>
+
+<log4j:event logger="org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl" timestamp="1476027684456" level="INFO" thread="main">
+<log4j:message><![CDATA[HHH000115: Hibernate connection pool size: 20 (min=1)]]></log4j:message>
+<log4j:locationInfo class="org.hibernate.engine.jdbc.connections.internal.PooledConnections" method="&lt;init&gt;" file="PooledConnections.java" line="41"/>
+</log4j:event>
+
+<log4j:event logger="org.hibernate.dialect.Dialect" timestamp="1476027684479" level="INFO" thread="main">
+<log4j:message><![CDATA[HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect]]></log4j:message>
+<log4j:locationInfo class="org.hibernate.dialect.Dialect" method="&lt;init&gt;" file="Dialect.java" line="153"/>
+</log4j:event>
+
+<log4j:event logger="org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl" timestamp="1476027684551" level="INFO" thread="main">
+<log4j:message><![CDATA[HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4]]></log4j:message>
+<log4j:locationInfo class="org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl" method="useContextualLobCreation" file="LobCreatorBuilderImpl.java" line="98"/>
+</log4j:event>
+

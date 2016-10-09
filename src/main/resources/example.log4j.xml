@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration debug="true" xmlns:log4j='http://jakarta.apache.org/log4j/'>
+
+	<appender name="console" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss,SSS} %-5p %l - %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="logfile" class="org.apache.log4j.RollingFileAppender">
+		<param name="file" value="log/HelloLogging.log" />
+		<param name="maxFileSize" value="10MB" />
+		<param name="maxBackupIndex" value="10" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss,SSS} %-5p %C:%t:%L - %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="logfiledaily" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="file" value="log/HelloDailyLogging.log" />
+		<param name="datePattern" value="'.' yyyy-MM-dd-a" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss,SSS} %-5p %C:%t:%L - %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="loghtmlfile" class="org.apache.log4j.FileAppender">
+		<param name="file" value="log/HelloLogging.html" />
+		<layout class="org.apache.log4j.HTMLLayout">
+			<param name="title" value="HTML Layout" />
+			<param name="locationInfo" value="true" />
+		</layout>
+	</appender>
+	
+	<appender name="logxmlfile" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="log/HelloLogging.xml"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <param name="Append" value="true"/>
+        <param name="Threshold" value="debug"/>
+        <layout class="org.apache.log4j.xml.XMLLayout">
+        	<param name="locationInfo" value="true" />
+        	<param name="properties" value="true" />
+        </layout>
+      </appender>
+
+	<!-- when you need realtime analitics, maybe db is an option -->
+	<appender name="logdb" class="org.apache.log4j.jdbc.JDBCAppender">
+		<param name="URL" value="jdbc:mysql://localhost/HelloJava" />
+		<param name="driver" value="com.mysql.jdbc.Driver" />
+		<param name="user" value="root" />
+		<param name="password" value="" />
+		<param name="locationInfo" value="true" />
+		<layout class="org.apache.log4j.PatternLayout" >
+			<param name="ConversionPattern" value="INSERT INTO LOGS(USER_ID, DATETIME, LOGGER, LEVEL, MESSAGE) VALUES('%x','%d{yyyy-MM-dd HH:mm:ss}','%C:%t:%L','%p','%m')" />
+		</layout>
+	</appender>
+	
+	<root>
+		<level value="INFO" />
+		<appender-ref ref="console" />
+		<appender-ref ref="logfile" />
+		<appender-ref ref="logfiledaily" />
+		<appender-ref ref="loghtmlfile" />
+		<appender-ref ref="logxmlfile" />
+		<appender-ref ref="logdb" />
+	</root>
+
+</log4j:configuration>

@@ -1,0 +1,12 @@
+2016-10-09 22:41:23,416 INFO  org.hibernate.Version:main:45 - HHH000412: Hibernate Core {5.2.3.Final}
+2016-10-09 22:41:24,111 INFO  org.hibernate.cfg.Environment:main:213 - HHH000206: hibernate.properties not found
+2016-10-09 22:41:24,116 INFO  org.hibernate.cfg.Environment:main:318 - HHH000021: Bytecode provider name : javassist
+2016-10-09 22:41:24,132 WARN  org.hibernate.boot.jaxb.internal.stax.LocalXmlResourceResolver:main:91 - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2016-10-09 22:41:24,346 INFO  org.hibernate.annotations.common.reflection.java.JavaReflectionManager:main:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-10-09 22:41:24,445 WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:main:70 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-10-09 22:41:24,450 INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:main:126 - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/hellojava]
+2016-10-09 22:41:24,452 INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:main:135 - HHH10001001: Connection properties: {user=root, password=****}
+2016-10-09 22:41:24,453 INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:main:140 - HHH10001003: Autocommit mode: false
+2016-10-09 22:41:24,456 INFO  org.hibernate.engine.jdbc.connections.internal.PooledConnections:main:41 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-10-09 22:41:24,479 INFO  org.hibernate.dialect.Dialect:main:153 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2016-10-09 22:41:24,551 INFO  org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl:main:98 - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
