@@ -24,7 +24,7 @@ Sample Connection Configuration
 <property name="eclipselink.ddl-generation" value="create-tables"/>
 ```
 
-## Hibernate configuration
+## Hibernate Configuration
 Configuration File Location
 ```java
 src/main/resources/hibernate.cfg.xml

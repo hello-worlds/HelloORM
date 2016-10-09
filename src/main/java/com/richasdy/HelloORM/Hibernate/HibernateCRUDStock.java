@@ -1,9 +1,5 @@
 package com.richasdy.HelloORM.Hibernate;
 
-//import javax.persistence.EntityManager;
-//import javax.persistence.EntityManagerFactory;
-//import javax.persistence.Persistence;
-
 import java.util.List;
 import java.util.Date;
 import java.util.Iterator;
@@ -13,22 +9,47 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-
+import com.richasdy.HelloORM.Hibernate.model.HEmployee;
 import com.richasdy.HelloORM.Hibernate.model.Stock;
 
-public class HibernateStockService {
-
+public class HibernateCRUDStock {
 	private static SessionFactory factory;
 
-	/* Method to CREATE an stock in the database */
+	public static void main(String[] args) {
+
+		factory = new Configuration().configure().buildSessionFactory();
+
+		HibernateCRUDStock ME = new HibernateCRUDStock();
+
+		/* Add few stock records in database */
+		Integer stockID1 = ME.addStock("EB", "Eiger Bag");
+		Integer stockID2 = ME.addStock("NS", "Nike Shoes");
+		Integer stockID3 = ME.addStock("AP", "Apple Phone");
+
+		/* List down all the stocks */
+		System.out.println("Stock Before");
+		ME.listStocks();
+
+		/* Update stock records */
+		ME.updateStock(stockID2, "Nike Running Shoes");
+
+		/* Delete an employee from the database */
+		 ME.deleteStock(stockID3);
+
+		/* List down new list of the employees */
+		System.out.println("Stock After");
+		ME.listStocks();
+	}
+
+	/* Method to CREATE a stock in the database */
 	public Integer addStock(String stockCode, String stockName) {
 		Session session = factory.openSession();
 		Transaction tx = null;
-		Integer stockID = null;
+		Integer stockId = null;
 		try {
 			tx = session.beginTransaction();
 			Stock stock = new Stock(stockCode, stockName);
-			stockID = (Integer) session.save(stock);
+			stockId = (Integer) session.save(stock);
 			tx.commit();
 		} catch (HibernateException e) {
 			if (tx != null)
@@ -37,10 +58,10 @@ public class HibernateStockService {
 		} finally {
 			session.close();
 		}
-		return stockID;
+		return stockId;
 	}
 
-	/* Method to READ all the Stocks */
+	/* Method to READ all the stocks */
 	public void listStocks() {
 		Session session = factory.openSession();
 		Transaction tx = null;
@@ -49,9 +70,7 @@ public class HibernateStockService {
 			List stocks = session.createQuery("FROM Stock").list();
 			for (Iterator iterator = stocks.iterator(); iterator.hasNext();) {
 				Stock stock = (Stock) iterator.next();
-				System.out.print("Stock Id: " + stock.getStockId());
-				System.out.print("Stock Code: " + stock.getStockCode());
-				System.out.println("Stock Name: " + stock.getStockName());
+				System.out.println(stock.toString());
 			}
 			tx.commit();
 		} catch (HibernateException e) {
@@ -63,13 +82,13 @@ public class HibernateStockService {
 		}
 	}
 
-	/* Method to UPDATE stockName for a Stock */
-	public void updateStock(Integer stockID, String stockName) {
+	/* Method to UPDATE stockName for an stock */
+	public void updateStock(Integer stockId, String stockName) {
 		Session session = factory.openSession();
 		Transaction tx = null;
 		try {
 			tx = session.beginTransaction();
-			Stock stock = (Stock) session.get(Stock.class, stockID);
+			Stock stock = (Stock) session.get(Stock.class, stockId);
 			stock.setStockName(stockName);
 			session.update(stock);
 			tx.commit();
@@ -83,12 +102,12 @@ public class HibernateStockService {
 	}
 
 	/* Method to DELETE a stock from the records */
-	public void deleteStock(Integer stockID) {
+	public void deleteStock(Integer stockId) {
 		Session session = factory.openSession();
 		Transaction tx = null;
 		try {
 			tx = session.beginTransaction();
-			Stock stock = (Stock) session.get(Stock.class, stockID);
+			Stock stock = (Stock) session.get(Stock.class, stockId);
 			session.delete(stock);
 			tx.commit();
 		} catch (HibernateException e) {
@@ -99,5 +118,4 @@ public class HibernateStockService {
 			session.close();
 		}
 	}
-
 }

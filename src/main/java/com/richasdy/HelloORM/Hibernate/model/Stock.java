@@ -2,9 +2,15 @@ package com.richasdy.HelloORM.Hibernate.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import static javax.persistence.GenerationType.IDENTITY;
+
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
@@ -13,11 +19,11 @@ import javax.persistence.UniqueConstraint;
 		@UniqueConstraint(columnNames = "STOCK_CODE") })
 
 public class Stock implements java.io.Serializable {
-	
-	
+
 	private Integer stockId;
 	private String stockCode;
 	private String stockName;
+	private StockDetail stockDetail;
 
 	public Stock() {
 	}
@@ -55,9 +61,10 @@ public class Stock implements java.io.Serializable {
 	public void setStockName(String stockName) {
 		this.stockName = stockName;
 	}
-	
+
 	@Override
-	public String toString(){
-		return "Stock [stockId=" + this.stockId + ", stockCode=" + this.stockCode + ", stockName=" + this.stockName + "]";
+	public String toString() {
+		return "Stock [stockId=" + this.stockId + ", stockCode=" + this.stockCode + ", stockName=" + this.stockName
+				+ "]";
 	}
 }
