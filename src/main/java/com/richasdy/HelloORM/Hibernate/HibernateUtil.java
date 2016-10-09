@@ -5,8 +5,16 @@ import org.hibernate.cfg.AnnotationConfiguration;
 import org.hibernate.cfg.Configuration;
 
 public class HibernateUtil {
-	private static final SessionFactory sessionFactory = buildSessionFactory();
+	
+	// The SessionFactory is heavyweight object
+	// so usually it is created during application start up and kept for later use.
+	// You would need one SessionFactory object per database using a separate configuration file.
+	// So if you are using multiple databases then
+	// you would have to create multiple SessionFactory objects.
 
+	private static final SessionFactory sessionFactory = buildSessionFactory();
+	
+	
 	private static SessionFactory buildSessionFactory() {
 		try {
 			// Create the SessionFactory from hibernate.cfg.xml

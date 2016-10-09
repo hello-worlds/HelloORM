@@ -13,6 +13,8 @@ import javax.persistence.UniqueConstraint;
 		@UniqueConstraint(columnNames = "STOCK_CODE") })
 
 public class Stock implements java.io.Serializable {
+	
+	
 	private Integer stockId;
 	private String stockCode;
 	private String stockName;
@@ -52,5 +54,10 @@ public class Stock implements java.io.Serializable {
 
 	public void setStockName(String stockName) {
 		this.stockName = stockName;
+	}
+	
+	@Override
+	public String toString(){
+		return "Stock [stockId=" + this.stockId + ", stockCode=" + this.stockCode + ", stockName=" + this.stockName + "]";
 	}
 }
