@@ -1,20 +1,21 @@
 package com.richasdy.HelloORM.Hibernate.model;
 
+import java.util.HashSet;
+import java.util.Set;
+import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+import javax.persistence.JoinColumn;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import static javax.persistence.GenerationType.IDENTITY;
-
-import java.util.HashSet;
-import java.util.Set;
-
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
 
 @Entity
 @Table(name = "stock", catalog = "hellojava", uniqueConstraints = { @UniqueConstraint(columnNames = "STOCK_NAME"),
@@ -30,6 +31,8 @@ public class Stock implements java.io.Serializable {
 	// OneToMany Implementation
 	private Set<StockDailyRecord> stockDailyRecords = new HashSet<StockDailyRecord>(
 			0);
+	// ManyToMany Implementation
+	private Set<Category> categories = new HashSet<Category>(0);
 
 	public Stock() {
 	}
@@ -90,6 +93,18 @@ public class Stock implements java.io.Serializable {
 
 	public void setStockDailyRecords(Set<StockDailyRecord> stockDailyRecords) {
 		this.stockDailyRecords = stockDailyRecords;
+	}
+	
+	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinTable(name = "stock_category", catalog = "hellojava", joinColumns = {
+			@JoinColumn(name = "STOCK_ID", nullable = false, updatable = false) }, inverseJoinColumns = {
+					@JoinColumn(name = "CATEGORY_ID", nullable = false, updatable = false) })
+	public Set<Category> getCategories() {
+		return this.categories;
+	}
+
+	public void setCategories(Set<Category> categories) {
+		this.categories = categories;
 	}
 
 	@Override
