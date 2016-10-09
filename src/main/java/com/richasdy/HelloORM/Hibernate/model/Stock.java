@@ -1,5 +1,6 @@
 package com.richasdy.HelloORM.Hibernate.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -11,6 +12,7 @@ import java.util.Set;
 
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
@@ -23,6 +25,7 @@ public class Stock implements java.io.Serializable {
 	private Integer stockId;
 	private String stockCode;
 	private String stockName;
+	// OneToOne Implementation
 	private StockDetail stockDetail;
 
 	public Stock() {
@@ -31,6 +34,12 @@ public class Stock implements java.io.Serializable {
 	public Stock(String stockCode, String stockName) {
 		this.stockCode = stockCode;
 		this.stockName = stockName;
+	}
+
+	public Stock(String stockCode, String stockName, StockDetail stockDetail) {
+		this.stockCode = stockCode;
+		this.stockName = stockName;
+		this.stockDetail = stockDetail;
 	}
 
 	@Id
@@ -60,6 +69,15 @@ public class Stock implements java.io.Serializable {
 
 	public void setStockName(String stockName) {
 		this.stockName = stockName;
+	}
+	
+	@OneToOne(fetch = FetchType.LAZY, mappedBy = "stock", cascade = CascadeType.ALL)
+	public StockDetail getStockDetail() {
+		return this.stockDetail;
+	}
+
+	public void setStockDetail(StockDetail stockDetail) {
+		this.stockDetail = stockDetail;
 	}
 
 	@Override

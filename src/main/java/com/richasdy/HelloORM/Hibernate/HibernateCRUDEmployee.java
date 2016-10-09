@@ -12,6 +12,7 @@ import org.hibernate.cfg.Configuration;
 import com.richasdy.HelloORM.Hibernate.model.HEmployee;
 
 public class HibernateCRUDEmployee {
+	
 	private static SessionFactory factory;
 
 	public static void main(String[] args) {
@@ -40,6 +41,8 @@ public class HibernateCRUDEmployee {
 
 		/* List down new list of the employees */
 		ME.listEmployees();
+		
+		factory.close();
 	}
 
 	/* Method to CREATE an employee in the database */

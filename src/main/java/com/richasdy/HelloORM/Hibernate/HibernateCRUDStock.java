@@ -1,24 +1,15 @@
 package com.richasdy.HelloORM.Hibernate;
 
 import java.util.List;
-import java.util.Date;
 import java.util.Iterator;
-
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
-import com.richasdy.HelloORM.Hibernate.model.HEmployee;
 import com.richasdy.HelloORM.Hibernate.model.Stock;
 
 public class HibernateCRUDStock {
-	private static SessionFactory factory;
 
 	public static void main(String[] args) {
-
-		factory = new Configuration().configure().buildSessionFactory();
-
 		HibernateCRUDStock ME = new HibernateCRUDStock();
 
 		/* Add few stock records in database */
@@ -34,16 +25,20 @@ public class HibernateCRUDStock {
 		ME.updateStock(stockID2, "Nike Running Shoes");
 
 		/* Delete an employee from the database */
-		 ME.deleteStock(stockID3);
+		ME.deleteStock(stockID3);
 
 		/* List down new list of the employees */
 		System.out.println("Stock After");
 		ME.listStocks();
+
+		// application still active (un-terminate) if we dont shutdown
+		// HibernateUtil.shutdown();
+
 	}
 
 	/* Method to CREATE a stock in the database */
 	public Integer addStock(String stockCode, String stockName) {
-		Session session = factory.openSession();
+		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction tx = null;
 		Integer stockId = null;
 		try {
@@ -63,7 +58,7 @@ public class HibernateCRUDStock {
 
 	/* Method to READ all the stocks */
 	public void listStocks() {
-		Session session = factory.openSession();
+		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction tx = null;
 		try {
 			tx = session.beginTransaction();
@@ -84,7 +79,7 @@ public class HibernateCRUDStock {
 
 	/* Method to UPDATE stockName for an stock */
 	public void updateStock(Integer stockId, String stockName) {
-		Session session = factory.openSession();
+		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction tx = null;
 		try {
 			tx = session.beginTransaction();
@@ -103,7 +98,7 @@ public class HibernateCRUDStock {
 
 	/* Method to DELETE a stock from the records */
 	public void deleteStock(Integer stockId) {
-		Session session = factory.openSession();
+		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction tx = null;
 		try {
 			tx = session.beginTransaction();

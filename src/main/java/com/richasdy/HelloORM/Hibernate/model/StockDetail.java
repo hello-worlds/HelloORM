@@ -15,9 +15,12 @@ import javax.persistence.TemporalType;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Parameter;
 
+@Entity
+@Table(name = "stock_detail", catalog = "hellojava")
 public class StockDetail implements Serializable {
 	
 	private Integer stockId;
+	// OneToOne Implementation
 	private Stock stock;
 	private String compName;
 	private String compDesc;
@@ -92,5 +95,13 @@ public class StockDetail implements Serializable {
 
 	public void setListedDate(Date listedDate) {
 		this.listedDate = listedDate;
+	}
+	
+	@Override
+	public String toString(){
+		return  "Stock Detail [stockId=" + this.stockId + ", compName=" + this.compName 
+				+ ", compDesc=" + this.compDesc + ", remark=" + this.remark
+				+ ", listedDate=" + this.listedDate +"]";
+		
 	}
 }
