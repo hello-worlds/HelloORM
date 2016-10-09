@@ -19,6 +19,10 @@
 			<id>JBoss repository</id>
 			<url>http://repository.jboss.com/maven2/</url>
 		</repository>
+		<repository>
+			<id>JBoss repository</id>
+			<url>http://repository.jboss.org/nexus/content/groups/public/</url>
+		</repository>
 	</repositories>
 
 	<dependencies>
@@ -91,6 +95,13 @@
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>1.6.1</version>
+		</dependency> -->
+		
+		<!-- Hibernate c3p0 connection pool -->
+		<!-- <dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-c3p0</artifactId>
+			<version>3.6.3.Final</version>
 		</dependency> -->
 
 		<dependency>
