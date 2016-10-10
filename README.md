@@ -56,6 +56,10 @@ Sample XML Configuration
 ## Hibernate
 * Hibernate CRUD
 * Hibernate Entity Relational Mapping
-* Costum Logging
+* Hibernate Costum Logging
 * Hibernate c3p0 connection pool
-* Transaction
+* Hibernate Transaction
+* Hibernate QL
+* Hibernate Native Query
+* Hibernate Criteria
+* Hibernate Parameter Binding
