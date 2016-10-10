@@ -76,6 +76,9 @@ public class HibernateQueryLanguage {
 			// = ?";
 			// List result = session.createQuery(hql).setString(0,
 			// "7277").setParameter(1, "DIALOG").list();
+			
+			// EMBED ORACLE HINTS
+			// query.setComment();
 
 			// All result
 			Query query = session.createQuery("FROM HEmployee");
