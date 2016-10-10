@@ -9,6 +9,20 @@ import javax.persistence.*;
 
 import com.richasdy.HelloORM.JPAEclipseLink.model.EREmployee;
 
+@NamedQueries({
+	@NamedQuery(
+	name = "findEmployeeById",
+	query = "from HEmployee e where e.id = :id"
+	)
+})
+
+@NamedNativeQueries({
+	@NamedNativeQuery(
+	name = "findAllEmployee",
+	query = "select * from hemployee",
+        resultClass = HEmployee.class
+	)
+})
 @Entity
 @Table(name = "hemployee")
 public class HEmployee implements Serializable {

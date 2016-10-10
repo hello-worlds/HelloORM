@@ -58,3 +58,4 @@ Sample XML Configuration
 * Hibernate Entity Relational Mapping
 * Costum Logging
 * Hibernate c3p0 connection pool
+* Transaction
