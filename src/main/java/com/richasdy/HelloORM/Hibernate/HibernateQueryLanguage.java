@@ -22,7 +22,7 @@ public class HibernateQueryLanguage {
 			tx = session.beginTransaction();
 
 			// SELECT QUERY
-			// HQL SELECT with custom variable
+			// HQL SELECT with parameter binding
 			// Query query = session.createQuery("FROM HEmployee where id =
 			// :code");
 			// query.setParameter("code", 1);
@@ -31,7 +31,7 @@ public class HibernateQueryLanguage {
 			// query = session.createQuery("FROM HEmployee where id = '1'");
 
 			// UPDATE QUERY
-			// HQL UPDATE with custom variable
+			// HQL UPDATE with parameter binding
 			// Query query = session.createQuery("update HEmployee set
 			// firstName= :firstName where id = :id");
 			// query.setParameter("firstName", "Donni");
@@ -46,7 +46,7 @@ public class HibernateQueryLanguage {
 			// System.out.println("Number of item updated : " + result);
 
 			// DELETE QUERY
-			// HQL DELETE with custom variable
+			// HQL DELETE with parameter binding
 			// Query query = session.createQuery("delete HEmployee where id =
 			// :id");
 			// query.setParameter("id", 11);
@@ -60,9 +60,23 @@ public class HibernateQueryLanguage {
 			// System.out.println("Number of item deleted : " + result);
 
 			// INSERT QUERY
-			// In HQL, only the INSERT INTO … SELECT … is supported; there is no INSERT INTO … VALUES.
+			// In HQL, only the INSERT INTO … SELECT … is supported; there is no
+			// INSERT INTO … VALUES.
 			// HQL only support insert from another table.
-			
+
+			// PARAMETER BINDING
+			// NAMED PARAMETERS
+			// setParameter : auto discover the parameter data type
+			// setString : parameter date type is String
+			// setProperties : pass an object into the parameter binding
+
+			// POSITION PARAMETER
+			// Example
+			// String hql = "from Stock s where s.stockCode = ? and s.stockName
+			// = ?";
+			// List result = session.createQuery(hql).setString(0,
+			// "7277").setParameter(1, "DIALOG").list();
+
 			// All result
 			Query query = session.createQuery("FROM HEmployee");
 			List employees = query.list();
