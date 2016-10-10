@@ -55,6 +55,6 @@ Sample XML Configuration
 
 ## Hibernate
 * Hibernate CRUD
-* Hibernate Criteria aka Query Builder
 * Hibernate Entity Relational Mapping
-* HQL (Query Language)
+* Costum Logging
+* Hibernate c3p0 connection pool
